@@ -14,7 +14,7 @@ import { db } from "../firebase/firestore.config";
 
 const collectionRef = collection(db, "notes");
 
-function NoteForm() {
+function NoteForm({ refetch }) {
   const {
     open: isOpen,
     closeNote: close,
@@ -48,6 +48,7 @@ function NoteForm() {
       const toastId = ToastLoading({ message: "Saving Note..." });
       try {
         const docId = await addDoc(collectionRef, documentBody);
+        refetch();
         setIsLoading(false);
         toast.dismiss(toastId);
         ToastSuccess({ message: "Note Saved..." });
@@ -62,6 +63,7 @@ function NoteForm() {
       const toastId = ToastLoading({ message: "Updating Note..." });
       try {
         await updateDoc(docRef, documentBody);
+        refetch();
         setIsLoading(false);
         toast.dismiss(toastId);
         ToastSuccess({ message: "Note Updated..." });

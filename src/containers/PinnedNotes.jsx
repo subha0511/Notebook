@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Pagination from "../components/Pagination";
 import Note from "../components/Note";
 
-function PinnedNotes({ data, isLoading, active, onBack, seeAll }) {
+function PinnedNotes({ data, isLoading, active, onBack, seeAll, refetch }) {
   const [pageIndex, setPageIndex] = useState(0);
 
   const limit = data?.length;
@@ -49,13 +49,13 @@ function PinnedNotes({ data, isLoading, active, onBack, seeAll }) {
             {!active ? (
               <>
                 {data?.slice(0, 3)?.map((doc) => (
-                  <Note data={doc} key={doc.id} />
+                  <Note data={doc} key={doc.id} refetch={refetch} />
                 ))}
               </>
             ) : (
               <>
                 {data?.slice(pageIndex * 5, (pageIndex + 1) * 5)?.map((doc) => (
-                  <Note data={doc} key={doc.id} />
+                  <Note data={doc} key={doc.id} refetch={refetch} />
                 ))}
               </>
             )}
@@ -83,15 +83,9 @@ const LoadingSkeleton = () => {
       <div
         className={`bg-gray-300 animate-pulse mb-5 rounded-lg p-5 h-40 break-inside-avoid w-full`}
       ></div>
-      {/* <div
-        className={`bg-gray-300 animate-pulse mb-5 rounded-lg p-5 h-56 break-inside-avoid w-full`}
-      ></div> */}
       <div
         className={`bg-gray-300 animate-pulse mb-5 rounded-lg p-5 h-36 break-inside-avoid w-full`}
       ></div>
-      {/* <div
-        className={`bg-gray-300 animate-pulse mb-5 rounded-lg p-5 h-48 break-inside-avoid w-full`}
-      ></div> */}
       <div
         className={`bg-gray-300 animate-pulse mb-5 rounded-lg p-5 h-48 break-inside-avoid w-full`}
       ></div>

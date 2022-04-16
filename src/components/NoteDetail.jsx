@@ -6,7 +6,7 @@ import { db } from "./../firebase/firestore.config";
 import { ToastError, ToastLoading, ToastSuccess } from "./Toast/index";
 import { toast } from "react-hot-toast";
 
-function NoteDetail({ data, isOpen, close }) {
+function NoteDetail({ data, isOpen, close, refetch }) {
   const { syncNote } = useNoteModal();
   const initialRef = useRef();
 
@@ -20,6 +20,7 @@ function NoteDetail({ data, isOpen, close }) {
     const toastId = ToastLoading({ message: "Deleting Note..." });
     try {
       await deleteDoc(docRef);
+      refetch();
       toast.dismiss(toastId);
       ToastSuccess({ message: "Note Deleted..." });
     } catch (error) {

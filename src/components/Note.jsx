@@ -6,7 +6,7 @@ import { db } from "../firebase/firestore.config";
 import { ToastLoading, ToastSuccess, ToastError } from "./Toast";
 import { toast } from "react-hot-toast";
 
-function Note({ data }) {
+function Note({ data, refetch }) {
   const [openModal, setOpenModal] = useState(false);
   const [favLoading, setFavLoading] = useState(false);
 
@@ -38,6 +38,7 @@ function Note({ data }) {
     });
     try {
       await updateDoc(docRef, documentBody);
+      refetch();
       setFavLoading(false);
       toast.dismiss(toastId);
       ToastSuccess({
@@ -82,7 +83,12 @@ function Note({ data }) {
         </div>
       </div>
       {openModal && (
-        <NoteDetail data={data} isOpen={openModal} close={handleCancel} />
+        <NoteDetail
+          data={data}
+          isOpen={openModal}
+          close={handleCancel}
+          refetch={refetch}
+        />
       )}
     </>
   );
