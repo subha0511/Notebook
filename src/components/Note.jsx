@@ -33,17 +33,23 @@ function Note({ data }) {
     };
     const docRef = doc(db, "notes", data?.id);
     setFavLoading(true);
-    const toastId = ToastLoading({ message: "Pinning Note..." });
+    const toastId = ToastLoading({
+      message: data?.pinned ? "Unpinning Note..." : "Pinning Note...",
+    });
     try {
       await updateDoc(docRef, documentBody);
       setFavLoading(false);
       toast.dismiss(toastId);
-      ToastSuccess({ message: "Note Pinned..." });
+      ToastSuccess({
+        message: data?.pinned ? "Note Unpinned..." : "Note Pinned...",
+      });
     } catch (error) {
       console.log(error);
       setFavLoading(false);
       toast.dismiss(toastId);
-      ToastError({ message: "Pinning Failed..." });
+      ToastError({
+        message: data?.pinned ? "Unpinning Failed..." : "Pinning Failed...",
+      });
     }
   };
 
