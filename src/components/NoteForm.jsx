@@ -29,7 +29,13 @@ function NoteForm() {
 
   const [isLoading, setIsLoading] = useState(false);
 
+  const invalidForm =
+    data?.title === "" && data?.tagline === "" && data?.body === "";
+
   const handleSubmit = async () => {
+    if (invalidForm) {
+      return;
+    }
     setIsLoading(true);
     const documentBody = {
       ...data,
@@ -117,7 +123,7 @@ function NoteForm() {
               </div>
               <button
                 onClick={handleSubmit}
-                disabled={isLoading}
+                disabled={isLoading || invalidForm}
                 className={`px-5 py-1.5 rounded-lg ${colors[colour][4]} hover:${
                   colors[colour][5]
                 } text-white ${isLoading ? "cursor-wait" : "cursor-pointer"} `}

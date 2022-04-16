@@ -73,7 +73,7 @@ function Note({ data }) {
         <div className="text-xs text-right text-stone-800">
           Edited : {dateString}
         </div>
-        <div className="absolute transition-all duration-200 scale-0 right-5 top-5 group-hover:scale-100">
+        <div className="absolute transition-all duration-200 scale-100 sm:scale-0 right-5 top-5 group-hover:scale-100">
           <Favourite
             active={data?.pinned}
             onClick={handlePinned}
