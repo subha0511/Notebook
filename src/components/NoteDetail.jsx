@@ -41,7 +41,7 @@ function NoteDetail({ data, isOpen, close }) {
         <Dialog.Overlay className="fixed inset-0 bg-black opacity-40" />
 
         <div
-          className={`relative mx-8 box-content w-full md:max-w-screen-md p-6 md:mx-auto ${
+          className={`relative mx-8 box-content w-full md:w-auto md:max-w-screen-md p-6 md:mx-auto ${
             data?.colour ? `bg-${data?.colour}-300` : "border-1 bg-gray-100"
           } transition-all duration-300 rounded-l-xl rounded-r max-h-[70vh] overflow-y-scroll overflow-x-hidden light-scrollbar overflow-hidden`}
         >
