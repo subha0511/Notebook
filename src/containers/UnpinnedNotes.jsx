@@ -20,28 +20,28 @@ function UnpinnedNotes({ data, isLoading, active, onBack, seeAll }) {
   };
 
   return (
-    <section className="max-w-screen-md mx-auto">
+    <section className="max-w-screen-md pb-6 mx-8 sm:mx-10 lg:mx-auto">
       <div className="flex items-center justify-between pb-2">
-        <div className="p-1.5 text-gray-700 uppercase font-medium">
+        <div className="p-1.5 text-gray-700 uppercase font-medium mb-2">
           UNPINNED
         </div>
         {active ? (
           <div
-            className="px-3 py-1.5 text-sm font-medium text-gray-700 border border-gray-500 rounded-full cursor-pointer"
+            className="text-sm font-medium px-3 py-1.5 border border-slate-800 rounded-full text-slate-900 cursor-pointer"
             onClick={onBack}
           >
             Back
           </div>
         ) : (
           <div
-            className="px-3 py-1.5 text-sm font-medium text-gray-600 border border-gray-400 rounded-full cursor-pointer"
+            className="text-sm font-medium px-3 py-1.5 border border-slate-800 rounded-full text-slate-900 cursor-pointer"
             onClick={seeAll}
           >
             See All
           </div>
         )}
       </div>
-      <div className="columns-3 align-items-stretch">
+      <div className="columns-1 sm:columns-2 md:columns-3 align-items-stretch overscroll-y-contain">
         {isLoading ? (
           <LoadingSkeleton />
         ) : (

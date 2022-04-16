@@ -50,7 +50,7 @@ function App() {
   return (
     <>
       <div className="relative min-h-screen pt-20 pb-10 max-w-screen">
-        <header className="flex justify-between max-w-screen-md mx-auto mb-10">
+        <header className="flex justify-between max-w-screen-md mx-8 sm:mx-10 lg:mx-auto mb-10">
           <div className="text-4xl font-bold text-white">Notes</div>
           <div
             className="text-sm font-medium py-2.5 px-4 border border-white rounded-full text-gray-100 cursor-pointer"

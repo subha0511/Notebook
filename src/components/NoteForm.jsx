@@ -78,9 +78,9 @@ function NoteForm() {
         <Dialog.Overlay className="fixed inset-0 bg-black opacity-40" />
 
         <div
-          className={`relative max-w-screen-md p-6 mx-auto ${colors[colour][3]} transition-all duration-300 w-max w-screen-sm rounded-xl`}
+          className={`relative max-w-screen-md p-6 mx-8 md:mx-auto ${colors[colour][3]} transition-all duration-300 w-max w-screen-sm rounded-xl`}
         >
-          <div className="w-96">
+          <div className="w-full md:w-96">
             <Dialog.Title>
               <div className="mb-2">
                 <input
@@ -112,7 +112,7 @@ function NoteForm() {
             />
 
             <div className="flex justify-between">
-              <div className="flex items-center px-3 gap-x-6">
+              <div className="flex items-center md:px-3 gap-x-4 md:gap-x-6">
                 <ColorKnobs />
               </div>
               <button

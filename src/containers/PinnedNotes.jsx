@@ -20,9 +20,11 @@ function PinnedNotes({ data, isLoading, active, onBack, seeAll }) {
   };
 
   return (
-    <section className="max-w-screen-md pb-6 mx-auto">
+    <section className="max-w-screen-md pb-6 mx-8 sm:mx-10 lg:mx-auto">
       <div className="flex items-center justify-between pb-2">
-        <div className="p-1.5 text-gray-700 uppercase font-medium">PINNED</div>
+        <div className="p-1.5 text-gray-700 uppercase font-medium  mb-2">
+          PINNED
+        </div>
         {active ? (
           <div
             className="text-sm font-medium px-3 py-1.5 border border-slate-800 rounded-full text-slate-900 cursor-pointer"
@@ -39,7 +41,7 @@ function PinnedNotes({ data, isLoading, active, onBack, seeAll }) {
           </div>
         )}
       </div>
-      <div className="columns-3 align-items-stretch overscroll-y-contain">
+      <div className="sm:columns-2 md:columns-3 align-items-stretch">
         {isLoading ? (
           <LoadingSkeleton />
         ) : (
