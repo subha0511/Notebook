@@ -10,11 +10,9 @@ import {
 import NoteForm from "./components/NoteForm";
 import { useNoteModal } from "./contexts/modal.context";
 import useFetchInterval from "./hooks/useFetchInterval";
-import useAsyncInterval from "./hooks/useAsyncInterval";
 import { Toaster } from "react-hot-toast";
 import PinnedNotes from "./containers/PinnedNotes";
 import UnpinnedNotes from "./containers/UnpinnedNotes";
-import useInterval from "./hooks/useInterval";
 
 const db = getFirestore();
 
