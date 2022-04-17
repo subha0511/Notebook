@@ -62,13 +62,13 @@ function Note({ data, refetch }) {
         }`}
         onClick={() => setOpenModal(true)}
       >
-        <h3 className="mb-1.5 text-2xl antialiased font-medium tracking-tight text-slate-800 line-clamp-2">
+        <h3 className="mb-1.5 text-2xl break-words antialiased font-medium tracking-tight text-slate-800 line-clamp-2">
           {data?.title}
         </h3>
-        <p className="mb-2.5 text-xs italic font-medium text-slate-600">
+        <p className="mb-2.5 text-xs break-words italic font-medium text-slate-600">
           {data?.tagline}
         </p>
-        <p className="mb-2.5 text-base text-stone-800 line-clamp-6">
+        <p className="mb-2.5 text-base break-words text-stone-800 line-clamp-6">
           {data?.body}
         </p>
         <div className="text-xs text-right text-stone-800">

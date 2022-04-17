@@ -49,21 +49,21 @@ function NoteDetail({ data, isOpen, close, refetch }) {
           <div className="max-w-sm min-w-full md:w-96">
             <Dialog.Title>
               <div
-                className="mb-3 text-2xl antialiased font-medium tracking-tight text-slate-800"
+                className="mb-3 text-2xl antialiased font-medium tracking-tight break-words text-slate-800"
                 ref={initialRef}
               >
                 {data?.title}
               </div>
             </Dialog.Title>
-            <Dialog.Description className="mb-5 text-xs italic font-medium text-slate-600">
+            <Dialog.Description className="mb-5 text-xs italic font-medium break-words text-slate-600">
               {data?.tagline}
             </Dialog.Description>
 
-            <div className="mb-2.5 text-base text-stone-800 line-clamp-6">
+            <div className="mb-2.5 text-base text-stone-800 break-words line-clamp-6">
               {data?.body}
             </div>
 
-            <div className="w-full flex justify-between pt-2">
+            <div className="flex justify-between w-full pt-2">
               <button
                 className={`px-5 py-1 font-medium rounded-full focus:outline-none
                     border-2 border-red-400 text-red-500 hover:bg-red-400 hover:text-white transition-all duration-300 cursor-pointer`}
